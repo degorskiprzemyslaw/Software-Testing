@@ -1,13 +1,24 @@
 package com.sda.testingbasics.db;
 
+import java.util.List;
 import java.util.Objects;
 
 public class Customer {
-    private final String name;
-    private final String email;
+    private String name;
+    private String email;
+
+
 
     public Customer(String name, String email) {
         this.name = name;
+        this.email = email;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setEmail(String email) {
         this.email = email;
     }
 
@@ -19,6 +30,7 @@ public class Customer {
         return email;
     }
 
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -28,8 +40,11 @@ public class Customer {
             Objects.equals(email, customer.email);
     }
 
+
     @Override
     public int hashCode() {
         return Objects.hash(name, email);
     }
+
+
 }
